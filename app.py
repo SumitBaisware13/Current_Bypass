@@ -89,12 +89,12 @@ if manufacturer_col:
 else:
     st.warning("Meter Manufacturer column not found in data.")
 
-# ========== 3. Sanction Load > 10 kWh ==========
-st.markdown("## 3. Cases with Sanction Load > 10 kWh")
+# ========== 3. Sanction Load > 10 kW ==========
+st.markdown("## 3. Cases with Sanction Load > 10 kW")
 if sanction_col:
     df[sanction_col] = pd.to_numeric(df[sanction_col], errors='coerce')
     df_gt_10 = df[df[sanction_col] > 10]
-    st.write(f"**Total cases with Sanction Load > 10 kWh: {len(df_gt_10)}**")
+    st.write(f"**Total cases with Sanction Load > 10 kW: {len(df_gt_10)}**")
 
     fig3 = px.histogram(
         df_gt_10,
@@ -106,7 +106,7 @@ if sanction_col:
     )
     fig3.update_traces(marker_line_color='black', marker_line_width=1)
     fig3.update_layout(
-        xaxis_title='Sanction Load (kWh)',
+        xaxis_title='Sanction Load (kW)',
         yaxis_title='Number of Cases',
         template='simple_white',
         bargap=0.2,
