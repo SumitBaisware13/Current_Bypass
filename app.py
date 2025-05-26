@@ -100,7 +100,7 @@ if sanction_col:
         df_gt_10,
         x=sanction_col,
         nbins=20,
-        title='Distribution of Sanction Load (>10kWh)',
+        title='Distribution of Sanction Load (>10kW)',
         color_discrete_sequence=['#2E8B57'],
         opacity=0.85
     )
